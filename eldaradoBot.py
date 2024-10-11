@@ -24,4 +24,16 @@ async def fakt(update: Update, context) :
     fakt = get_random_fact()
     await update.message.reply_text(fakt)
 
-    
+# Main function to run the bot
+def main() : 
+    TOKEN = '8071279323:AAFvq7-jZFWzS67_ShqqLV3p7kBdv2hPukY'
+
+    app = Application.builder().token(TOKEN).build()
+
+    app.add_handler(CommandHandler("fakt", fakt))
+    app.add_handler(CommandHandler("start", start))
+
+    app.run_polling()
+
+if __name__ == '__main__' :
+    main()

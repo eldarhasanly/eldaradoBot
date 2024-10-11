@@ -18,3 +18,10 @@ def get_random_fact() :
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) : 
     welcome_message = "Eldarado bota xoş gəlmisiniz! Hal-hazırda bazada olan 1000-dən artıq faktdan təsadüfi bir fakt öyrənmək üçün /fakt əmrini daxil edin. © 2024. Eldar Həsənli"
     await update.message.reply_text(welcome_message)
+
+# Function to handle the /fakt command
+async def fakt(update: Update, context) :
+    fakt = get_random_fact()
+    await update.message.reply_text(fakt)
+
+    
